@@ -1,0 +1,33 @@
+{
+  "name": "studio-gyeol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:wasm": "node scripts/build-wasm.mjs",
+    "predev": "npm run build:wasm",
+    "dev": "next dev",
+    "prebuild": "npm run build:wasm",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/",
+    "bench:mesh": "vitest run --config vitest.bench.config.ts bench/",
+    "pretest": "npm run build:wasm",
+    "prebench:mesh": "npm run build:wasm"
+  },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@webgpu/types": "^0.1.74",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wabt": "^1.0.39"
+  }
+}
